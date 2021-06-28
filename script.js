@@ -52,8 +52,8 @@ function check() {
 
 function matched() {
 
-    cardPair[0].style.display = 'none'
-    cardPair[1].style.display = 'none'
+    cardPair[0].state = 'blocked'
+    cardPair[1].state = 'blocked'
     cardPair = []
     score += 1;
     cscore.innerHTML = score;
