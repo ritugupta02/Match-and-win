@@ -42,7 +42,10 @@ for (let i = 0; i < cards.length; i++) {
 function check() {
     if (cardPair.length == 2) {
         if (cardPair[0].querySelector('img').src == cardPair[1].querySelector('img').src) {
-            matched()
+
+            setTimeout(() => {
+                matched()
+            }, 600)
         }
         else {
             unmatched(cardPair[0], cardPair[1])
@@ -51,16 +54,19 @@ function check() {
 }
 
 function matched() {
-
-    cardPair[0].state = 'blocked'
-    cardPair[1].state = 'blocked'
+    cardPair[0].style.display = "none";
+    cardPair[1].style.display = "none";
     cardPair = []
     score += 1;
     cscore.innerHTML = score;
 
 
     if (score == 8) {
-        scoreachived();
+
+        setTimeout(() => {
+            scoreachived();
+        }, 600)
+
     }
 }
 
